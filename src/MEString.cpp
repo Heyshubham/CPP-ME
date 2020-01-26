@@ -57,6 +57,17 @@ namespace MEString
 		return result;		
 	}
 	
+	void replaceFirstOccurrence(std::string & data, const std::string &toSearch, const std::string &replaceStr)
+	{
+		// Get the first occurrence
+		size_t pos = data.find(toSearch);
+		if( pos != std::string::npos)
+		{
+			// Replace this occurrence of Sub String
+			data.replace(pos, toSearch.size(), replaceStr);
+		}
+	}
+	
 	void replaceAll(std::string & data, const std::string &toSearch, const std::string &replaceStr)
 	{
 		// Get the first occurrence

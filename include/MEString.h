@@ -11,6 +11,6 @@ namespace MEString
 	
 	std::vector<std::string> split(const std::string& i_str, const std::string& i_delim);
 	
-	
+	void replaceFirstOccurrence(std::string & data, const std::string &toSearch, const std::string &replaceStr);
 	void replaceAll(std::string & data, const std::string &toSearch, const std::string &replaceStr);
 }

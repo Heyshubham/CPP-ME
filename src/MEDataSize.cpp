@@ -9,9 +9,9 @@ namespace MEDataSize
 	
 	std::string getSizeStr(long double size, UNITS inputUnit, std::string format /*= %.2LF*/)
 	{
-		std::vector<std::string> units = {"BYTES", "KB", "MB", "GB", "TB", "PB", "EB", "ZB"};
+		std::string units[8] = {"BYTES", "KB", "MB", "GB", "TB", "PB", "EB", "ZB"};
 		size_t startIndex = static_cast<int>(inputUnit);
-		while(startIndex < units.size() && size >= 1024)
+		while(startIndex < 8 && size >= 1024)
 		{
 			startIndex++;
 			size /= 1024;

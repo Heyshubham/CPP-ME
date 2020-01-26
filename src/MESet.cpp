@@ -9,12 +9,15 @@ namespace MESet
 	template<typename T>
 	std::string join(const std::set<T> & s, const std::string delim)
 	{
-		static_assert(std::is_arithmetic<T>::value, "Not an arithmetic type");
 		std::stringstream ss("");
-		for(auto t: s)
+		for(const auto &t: s)
 			ss <<t <<delim;
-		string temp = ss.str();
-		return MMString::rtrim(temp, delim);
+		std::string temp = ss.str();
+		if(temp.size()> 0)
+		{
+			temp = std::string(temp.begin(), temp.end()-delim.size());
+		}
+		return temp;
 	}
 }
 
